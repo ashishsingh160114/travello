@@ -1,0 +1,19 @@
+<h>hello upload</h>
+{% extends 'base.html' %}
+{% block content %}
+<h2>UPLOAD</h2>
+<form method="post" enctype="multipart/form-data">
+{% csrf_token %}
+<input type="file" name="document">
+<button type="submit">Upload File</button>
+<hr>
+
+
+</form>
+{% if url %}
+<p>Uploaded file: <a href="{{ url }}">{{ url }}</a> is uploaded successfully.</p>
+{% endif %}
+<form>
+<input type="button" value=" Back "  onclick="history.back()">
+</form>
+{% endblock %}

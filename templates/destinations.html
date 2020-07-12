@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    {% csrf_token%}
+   <h1>Hello, {{user.first_name}} your welcome in Information Zone</h1>
+
+    
+    <form>
+
+<table border="6" cellpadding="60" cellpadding="500">
+<tr backgroung color="Red">
+<th>Destination Name</th>
+<th>Destination description</th>
+<th>Destination price</th>
+<th>Destination Image</th>
+<th>More Information</th>
+</tr>
+
+{% for dest in dests%}
+<td>{{dest.name}}</td>
+<td>{{dest.desc}}</td>
+<td>${{dest.price}}</td>
+<td><img src="{{dest.img.url}}" width="200" height="100"></td>
+<td><a href="https://www.google.com/search?q={{dest.name}}&oq={{dest.name}}&aqs=chrome..69i57j46j0j46j0l4.4464j0j4&sourceid=chrome&ie=UTF-8"> click me</a></td>
+</tr>
+
+
+
+{% endfor %}
+
+</table>
+
+<br>
+<br>
+<input type="button" value=" Back "  onclick="history.back()">
+    <br>
+    <br>
+    </form> 
+
+    </body>
+</html>

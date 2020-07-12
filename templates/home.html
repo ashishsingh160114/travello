@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hello dear {{name}}!!!!!!</h1>
+<h2>How are you??? <br>I have some question for you....</h2>
+
+<h3>This block is for addition</h3>
+
+<form action="add" method=post>
+{% csrf_token%}
+
+    Enter 1st number : <input type="text" name="num1"><br>
+    <br>
+    Enter 2nd number : <input type="text" name="num2"><br>
+    <br>
+    <input type="submit">
+</form>
+<br>
+
+<h4>This block is for multiplication</h4>
+
+<form action="mul" method=post> 
+{% csrf_token%}
+    Enter 1st number : <input type="text" name="num1"><br>
+    <br>
+    Enter 2nd number : <input type="text" name="num2"><br>
+    <br>
+    <button>submit</button>
+</form>
+{% endblock %}
